@@ -1,6 +1,7 @@
 use anyhow::Context;
 use clap::{Parser, ValueEnum};
-use jomini::TextTape;
+use jomini::{JominiDeserialize, TextTape};
+use serde::Deserialize;
 use std::io::{Cursor, Read, Write};
 
 #[derive(Parser)]
@@ -18,6 +19,8 @@ struct Cli {
 enum Task {
     #[value(alias("can-parse"))]
     CanParse,
+    #[value(alias("deserialization"))]
+    Deserialization,
 }
 
 fn main() -> anyhow::Result<()> {
@@ -41,6 +44,29 @@ fn main() -> anyhow::Result<()> {
                 writeln!(output, "-1")?;
             }
         },
+        Task::Deserialization => {
+            #[derive(Debug, JominiDeserialize)]
+            struct Gamestate {
+                #[jomini(duplicated)]
+                active_war: Vec<ActiveWar>,
+            }
+
+            #[derive(Debug, Deserialize)]
+            struct ActiveWar {
+                name: String,
+            }
+
+            let data: Gamestate = jomini::text::de::from_windows1252_slice(&content)
+                .context("unable to deserialize")?;
+            let max_war = data
+                .active_war
+                .iter()
+                .max_by(|a, b| a.name.len().cmp(&b.name.len()));
+            match max_war {
+                None => writeln!(output, "-1")?,
+                Some(max_war) => writeln!(output, "{}", max_war.name)?,
+            };
+        }
     };
 
     let elapsed_us = start.elapsed().as_micros();
