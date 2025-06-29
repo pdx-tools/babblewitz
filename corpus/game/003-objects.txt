@@ -1,0 +1,4 @@
+# @babblewitz:games: all
+country={
+    culture=french
+}

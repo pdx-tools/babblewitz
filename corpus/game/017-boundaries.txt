@@ -1,0 +1,2 @@
+# @babblewitz:games: all
+a={b="1""c"=d}foo=bar#good

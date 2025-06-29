@@ -1,0 +1,3 @@
+# @babblewitz:games: vic3 imperator hoi4 ck3
+@gutter = 20
+width = @gutter

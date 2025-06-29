@@ -1,0 +1,7 @@
+# @babblewitz:games: eu4
+my_advisor = {
+  [[scaled_skill]
+    $scaled_skill$
+  ]
+  [[!skill] if = {} ]
+}

@@ -1,0 +1,7 @@
+# @babblewitz:games: all
+aaa=foo         # a plain scalar
+bbb=-1          # an integer scalar
+ccc=1.000       # a decimal scalar
+ddd=yes         # a true scalar
+eee=no          # a false scalar
+fff="foo"       # a quoted scalar

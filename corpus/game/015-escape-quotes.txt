@@ -1,0 +1,5 @@
+# @babblewitz:games: all
+name = "Joe \"Captain\" Rogers"  # equivalent to 'Joe "Captain" Rogers'
+single = "a\"b"                  # equivalent to 'a"b'
+escaped = "\\"                   # equivalent to '\'
+doubled = "\\\""                 # equivalent to '\"'

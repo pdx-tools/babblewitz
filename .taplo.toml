@@ -1,0 +1,17 @@
+# Taplo configuration for TOML language server
+# This enables schema validation for babblewitz.config.toml files
+
+[[rule]]
+name = "babblewitz-config"
+include = ["**/babblewitz.config.toml"]
+
+[rule.schema]
+path = "./schema/babblewitz-config.schema.json"
+
+[rule.formatting]
+# Use 2 spaces for indentation
+indent_string = "  "
+# Keep arrays on single line if they fit
+array_auto_expand = true
+# Collapse simple arrays
+array_auto_collapse = true

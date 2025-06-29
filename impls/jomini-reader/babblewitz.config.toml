@@ -1,0 +1,43 @@
+# Babblewitz Configuration for jomini implementation
+# This file defines which games and test types this parser implementation supports
+
+name = "jomini-reader"
+description = "Implementation using the jomini crate for parsing Clausewitz files"
+
+# Project type determines how the runner will build and execute this implementation
+# Supported types: rust, gradle, nodejs, go, make
+# The runner will automatically derive build and run commands from the project type
+project-type = "rust"
+
+# Optional execution overrides (if the defaults don't work for your project)
+# [execution]
+# build-command = "cargo build --release"  # Override default build command
+# run-command = "cargo run --release --"   # Override default run command
+
+# Task definitions specify what operations this implementation supports
+# and which games are supported for each task
+[tasks]
+
+# The "can-parse" task checks if the parser can successfully parse files without errors
+# Used for conformance testing
+[tasks.can-parse]
+games = [
+  "eu4",
+#  "ck3",
+#  "hoi4",
+#  "vic3",
+#  "imperator",
+#  "stellaris",
+]
+
+# The "deserialization" task measures parsing speed and memory usage
+# Used for performance testing
+[tasks.deserialization]
+games = [
+  "eu4",
+#  "ck3", 
+#  "hoi4",
+#  "vic3",
+#  "imperator",
+#  "stellaris",
+]

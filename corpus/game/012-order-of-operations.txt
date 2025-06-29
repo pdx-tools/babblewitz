@@ -1,0 +1,3 @@
+# @babblewitz:games: vic3 imperator hoi4 ck3
+@half = [1/2]
+my_calc = @[(-half-half)*half]

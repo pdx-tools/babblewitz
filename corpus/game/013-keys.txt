@@ -1,0 +1,5 @@
+# @babblewitz:games: all
+"1821.1.1" = 0  # a quoted key
+-1="world"      # integer key
+flavor_tur.8=yes
+dashed-identifier=yes

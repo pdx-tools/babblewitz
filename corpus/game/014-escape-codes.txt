@@ -1,0 +1,6 @@
+# @babblewitz:games: imperator
+custom_name="ab D ( ID: 691 )\!"
+
+# Quotes can contain escape codes! Imperator uses them as
+# color codes (somehow `0x15` is translated to `#` in the
+# parsing process)

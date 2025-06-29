@@ -1,0 +1,19 @@
+# Rust
+**/target
+**/*.rs.bk
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test results
+*_results_*.json
+
+# Save files (potentially large and copyrighted)
+corpus/saves/

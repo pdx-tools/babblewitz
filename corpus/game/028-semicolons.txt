@@ -1,0 +1,2 @@
+# @babblewitz:games: all
+textureFile = "my_dir/my_image.dds";

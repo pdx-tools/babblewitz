@@ -1,0 +1,14 @@
+name = "jomini-tape"
+description = "hell world"
+project-type = "rust"
+
+[tasks]
+[tasks.can-parse]
+games = [
+  "eu4",
+  "ck3",
+  "hoi4",
+  "vic3",
+  "imperator",
+  "stellaris",
+]

@@ -1,0 +1,7 @@
+# @babblewitz:games: vic3 imperator hoi4 ck3
+@half = @[1/2]
+scale = @[1-half]
+scale_mul = @[1*half]
+scale_add = @[1+half]
+scale_div = @[1/half]
+my_list = { @[1-half] @half }

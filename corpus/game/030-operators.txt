@@ -1,0 +1,9 @@
+# @babblewitz:games: all
+intrigue >= high_skill_rating
+age > 16
+count < 2
+scope:attacker.primary_title.tier <= tier_county
+a != b
+start_date == 1066.9.15
+c:RUS ?= this
+this != root

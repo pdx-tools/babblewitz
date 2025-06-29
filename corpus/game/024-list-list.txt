@@ -1,0 +1,2 @@
+# @babblewitz:games: all
+color1 = list "beautiful_colors"

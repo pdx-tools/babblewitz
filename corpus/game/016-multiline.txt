@@ -1,0 +1,3 @@
+# @babblewitz:games: all
+name = "hello
+world = foo"

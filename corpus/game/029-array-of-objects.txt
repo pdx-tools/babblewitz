@@ -1,0 +1,2 @@
+# @babblewitz:games: all
+data = {{name="instance1"}{name="instance2"}}

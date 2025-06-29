@@ -1,0 +1,30 @@
+name: Configuration Validation & Linting
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches:
+
+jobs:
+  validate-configs:
+    runs-on: ubuntu-latest
+    name: Validate Configuration Files
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - uses: jdx/mise-action@v2
+    - name: Validate against JSON Schema
+      run: taplo lint
+    - name: Format check TOML files
+      run: taplo fmt --check
+
+  rustfmt:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - uses: jdx/mise-action@v2
+    - name: Check formatting
+      run: cargo fmt --all -- --check

@@ -1,0 +1,8 @@
+# @babblewitz:games: all
+on_actions = {
+  acquire_pulse
+  delay = { days = { 5 10 }}
+  acquire_pulse
+  delay = { days = { 15 20 }}
+  acquire_pulse
+}

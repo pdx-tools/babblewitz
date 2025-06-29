@@ -1,0 +1,5 @@
+# @babblewitz:games: all
+brittany_area = { #5
+    color = { 118  99  151 }
+    169 170 171 172 4384
+}

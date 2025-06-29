@@ -1,0 +1,2 @@
+# @babblewitz:games: all
+a = { b=c

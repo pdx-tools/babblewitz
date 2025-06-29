@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test Suite
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - uses: jdx/mise-action@v2
+
+    - name: Build
+      run: |
+        echo "🔨 Building workspace..."
+        cargo build --workspace --verbose
+
+    - name: Run tests
+      run: |
+        echo "🧪 Running tests..."
+        cargo test --workspace --verbose
+
+    - name: Build implementations
+      run: |
+        echo "🔨 Building all implementations..."
+        cargo run -- build
+
+  build-matrix:
+    runs-on: ${{ matrix.os }}
+    name: Build on ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - uses: jdx/mise-action@v2
+
+    - name: Build
+      run: cargo build --workspace
+
+    - name: Build implementations
+      run: |
+        cargo run --bin babblewitz -- build

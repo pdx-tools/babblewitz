@@ -1,0 +1,2 @@
+# @babblewitz:games: imperator ck3 vic3 hoi4 stellaris
+color2 = hsv { 0.09 0.76 0.98 }
