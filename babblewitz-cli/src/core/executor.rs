@@ -74,7 +74,10 @@ impl<'a> ImplementationExecutor<'a, Initial> {
                 ));
             }
 
-            println!("  Build {} completed successfully", self.implementation.config.name);
+            println!(
+                "  Build {} completed successfully",
+                self.implementation.config.name
+            );
         }
 
         Ok(ImplementationExecutor {

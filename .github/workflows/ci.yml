@@ -15,7 +15,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - uses: jdx/mise-action@v2
 
     - name: Build
       run: |
@@ -42,7 +41,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - uses: jdx/mise-action@v2
 
     - name: Build
       run: cargo build --workspace
