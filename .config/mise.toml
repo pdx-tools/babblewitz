@@ -1,4 +1,4 @@
 [tools]
 "aqua:rclone/rclone" = { version = "1.70.1" }
-"core:rust" = { version = "1.86.0" }
+#"core:rust" = { version = "1.86.0" }
 "ubi:tamasfe/taplo" = { version = "0.10.0" }

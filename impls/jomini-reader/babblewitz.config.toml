@@ -23,11 +23,11 @@ project-type = "rust"
 [tasks.can-parse]
 games = [
   "eu4",
-#  "ck3",
-#  "hoi4",
-#  "vic3",
-#  "imperator",
-#  "stellaris",
+  #  "ck3",
+  #  "hoi4",
+  #  "vic3",
+  #  "imperator",
+  #  "stellaris",
 ]
 
 # The "deserialization" task measures parsing speed and memory usage
@@ -35,9 +35,9 @@ games = [
 [tasks.deserialization]
 games = [
   "eu4",
-#  "ck3", 
-#  "hoi4",
-#  "vic3",
-#  "imperator",
-#  "stellaris",
+  #  "ck3", 
+  #  "hoi4",
+  #  "vic3",
+  #  "imperator",
+  #  "stellaris",
 ]
