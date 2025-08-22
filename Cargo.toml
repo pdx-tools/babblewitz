@@ -7,7 +7,7 @@ resolver = "2"
 anyhow = "1.0.98"
 clap = { version = "4.5.40", features = ["derive"] }
 flate2 = { version = "1.1.2", default-features = false, features = ["zlib-rs"] }
-rawzip = "0.2.0"
+rawzip = "0.4.0"
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.140"
 shell-words = "1.1.0"

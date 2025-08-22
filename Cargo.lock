@@ -448,9 +448,9 @@ checksum = "69cdb34c158ceb288df11e18b4bd39de994f6657d83847bdffdbd7f346754b0f"
 
 [[package]]
 name = "rawzip"
-version = "0.2.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f56483ae996be55c2bdfd193157620e8f70608c76416a3a754fd2531ea7f437d"
+checksum = "439c3cea2f04ab9cf078fab95c153af562df27cca8fbf88c0a7499c3f389ce23"
 
 [[package]]
 name = "rustix"
