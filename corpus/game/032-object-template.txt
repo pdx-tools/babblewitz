@@ -1,0 +1,16 @@
+# @babblewitz:games: vic3
+migration_buckets={
+	{
+		culture=237
+		religion=sunni
+		type=migration
+		is_slave=no
+	}={
+		num_to_migrate=455
+		expiration_date=1841.12.29.12
+		target_state=333
+		pops={
+			50338910=455
+		}
+	}
+}
