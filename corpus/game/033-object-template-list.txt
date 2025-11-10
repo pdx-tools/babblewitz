@@ -1,0 +1,13 @@
+# @babblewitz:games: eu5
+needed={
+    {
+        demand=pop_demand
+        pottery=0.002
+    }={ 1 2 1207980779 }
+
+    {
+        demand=pop_demand
+        medicaments=0.001
+        pottery=0.002
+    }={ 1560310099 486612606 }
+}

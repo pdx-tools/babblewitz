@@ -1,0 +1,15 @@
+# @babblewitz:games: eu5
+countries={
+    database={
+        287={
+            country_name={
+                name="CIVILWAR_FACTION_nobles_estate_NAME"
+                adjective="CIVILWAR_FACTION_nobles_estate_ADJECTIVE"
+                base="TST"
+            }
+        }
+        288={
+           country_name="TEU" 
+        }
+    }
+}

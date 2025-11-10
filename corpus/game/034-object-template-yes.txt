@@ -1,0 +1,11 @@
+# @babblewitz:games: eu5
+names={
+    {
+        name="AGRESSION_WAR_NAME"
+        
+    }=yes
+
+    {
+        name="AGRESSION_WAR_NAME"
+    }=yes
+}
