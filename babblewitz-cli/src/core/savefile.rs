@@ -21,6 +21,7 @@ use walkdir::WalkDir;
 pub enum Game {
     Ck3,
     Eu4,
+    Eu5,
     Hoi4,
     Imperator,
     Stellaris,
@@ -31,6 +32,7 @@ impl Game {
     pub fn from_str(s: &str) -> Option<Self> {
         match s.to_lowercase().as_str() {
             "eu4" => Some(Game::Eu4),
+            "eu5" => Some(Game::Eu5),
             "ck3" => Some(Game::Ck3),
             "vic3" => Some(Game::Vic3),
             "hoi4" => Some(Game::Hoi4),
@@ -43,6 +45,7 @@ impl Game {
     pub fn as_str(&self) -> &'static str {
         match self {
             Game::Eu4 => "eu4",
+            Game::Eu5 => "eu5",
             Game::Ck3 => "ck3",
             Game::Vic3 => "vic3",
             Game::Hoi4 => "hoi4",
@@ -180,6 +183,8 @@ mod tests {
         // Test from_str
         assert_eq!(Game::from_str("eu4"), Some(Game::Eu4));
         assert_eq!(Game::from_str("EU4"), Some(Game::Eu4));
+        assert_eq!(Game::from_str("eu5"), Some(Game::Eu5));
+        assert_eq!(Game::from_str("EU5"), Some(Game::Eu5));
         assert_eq!(Game::from_str("ck3"), Some(Game::Ck3));
         assert_eq!(Game::from_str("vic3"), Some(Game::Vic3));
         assert_eq!(Game::from_str("hoi4"), Some(Game::Hoi4));
@@ -189,6 +194,7 @@ mod tests {
 
         // Test as_str
         assert_eq!(Game::Eu4.as_str(), "eu4");
+        assert_eq!(Game::Eu5.as_str(), "eu5");
         assert_eq!(Game::Ck3.as_str(), "ck3");
         assert_eq!(Game::Vic3.as_str(), "vic3");
         assert_eq!(Game::Hoi4.as_str(), "hoi4");
@@ -197,6 +203,7 @@ mod tests {
 
         // Test Display trait
         assert_eq!(format!("{}", Game::Eu4), "eu4");
+        assert_eq!(format!("{}", Game::Eu5), "eu5");
         assert_eq!(format!("{}", Game::Ck3), "ck3");
     }
 
@@ -204,6 +211,7 @@ mod tests {
     fn test_game_serde() {
         // Test serialization
         assert_eq!(serde_json::to_string(&Game::Eu4).unwrap(), "\"eu4\"");
+        assert_eq!(serde_json::to_string(&Game::Eu5).unwrap(), "\"eu5\"");
         assert_eq!(serde_json::to_string(&Game::Ck3).unwrap(), "\"ck3\"");
         assert_eq!(serde_json::to_string(&Game::Vic3).unwrap(), "\"vic3\"");
         assert_eq!(serde_json::to_string(&Game::Hoi4).unwrap(), "\"hoi4\"");
@@ -218,6 +226,7 @@ mod tests {
 
         // Test deserialization
         assert_eq!(serde_json::from_str::<Game>("\"eu4\"").unwrap(), Game::Eu4);
+        assert_eq!(serde_json::from_str::<Game>("\"eu5\"").unwrap(), Game::Eu5);
         assert_eq!(serde_json::from_str::<Game>("\"ck3\"").unwrap(), Game::Ck3);
         assert_eq!(
             serde_json::from_str::<Game>("\"vic3\"").unwrap(),

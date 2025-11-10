@@ -1,0 +1,9 @@
+# @babblewitz:games: eu5 ck3 vic3
+countries={
+    database={
+        288={
+           country_name="TEU" 
+        }
+        100665568=none
+    }
+}

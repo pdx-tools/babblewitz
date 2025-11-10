@@ -13,6 +13,7 @@ fn expand_game_aliases(games_part: &str) -> Result<Vec<Game>> {
                 // Add all supported games
                 expanded_games.extend([
                     Game::Eu4,
+                    Game::Eu5,
                     Game::Ck3,
                     Game::Hoi4,
                     Game::Vic3,
@@ -153,6 +154,7 @@ mod tests {
             result,
             vec![
                 Game::Eu4,
+                Game::Eu5,
                 Game::Ck3,
                 Game::Hoi4,
                 Game::Vic3,
@@ -171,6 +173,7 @@ mod tests {
             result,
             vec![
                 Game::Eu4,
+                Game::Eu5,
                 Game::Ck3,
                 Game::Hoi4,
                 Game::Vic3,
@@ -185,6 +188,7 @@ mod tests {
             result,
             vec![
                 Game::Eu4,
+                Game::Eu5,
                 Game::Ck3,
                 Game::Hoi4,
                 Game::Vic3,
@@ -232,6 +236,7 @@ mod tests {
             games,
             vec![
                 Game::Eu4,
+                Game::Eu5,
                 Game::Ck3,
                 Game::Hoi4,
                 Game::Vic3,
@@ -306,6 +311,7 @@ mod tests {
             games,
             vec![
                 Game::Eu4,
+                Game::Eu5,
                 Game::Ck3,
                 Game::Hoi4,
                 Game::Vic3,

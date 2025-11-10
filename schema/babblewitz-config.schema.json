@@ -52,7 +52,7 @@
               "description": "List of games supported for the can-parse task",
               "items": {
                 "type": "string",
-                "enum": ["eu4", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
+                "enum": ["eu4", "eu5", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
               },
               "uniqueItems": true,
               "minItems": 1
@@ -70,7 +70,7 @@
               "description": "List of games supported for the deserialization task",
               "items": {
                 "type": "string",
-                "enum": ["eu4", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
+                "enum": ["eu4", "eu5", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
               },
               "uniqueItems": true,
               "minItems": 1
@@ -90,7 +90,7 @@
               "description": "List of games supported for this task",
               "items": {
                 "type": "string",
-                "enum": ["eu4", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
+                "enum": ["eu4", "eu5", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
               },
               "uniqueItems": true,
               "minItems": 1
@@ -111,10 +111,10 @@
       "project-type": "rust",
       "tasks": {
         "can-parse": {
-          "games": ["eu4", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
+          "games": ["eu4", "eu5", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
         },
         "deserialization": {
-          "games": ["eu4", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
+          "games": ["eu4", "eu5", "ck3", "hoi4", "vic3", "imperator", "stellaris"]
         }
       }
     },
