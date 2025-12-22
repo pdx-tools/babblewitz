@@ -2,20 +2,18 @@ use anyhow::Result;
 use std::path::Path;
 use std::process::Command;
 
-const RCLONE_REMOTE_NAME: &str = "eu4saves-test-cases";
-
 pub fn sync_assets() -> Result<()> {
     check_rclone_available()?;
     let local_assets_dir = Path::new("corpus").join("saves");
 
     // List of known asset files to sync
     let asset_files = vec![
-        "ck3/autosave.zip",
-        "eu4/eu4-autosave.zip",
-        "hoi4/canada.zip",
-        "imperator/autosave-debug.zip",
+        "ck3/autosave.ck3",
+        "eu4/autosave.eu4",
+        "hoi4/canada.hoi4",
+        "imperator/autosave.rome",
         "stellaris/test.sav",
-        "vic3/autosave.zip",
+        "vic3/autosave.v3",
     ];
 
     sync_specific_assets_with_rclone(&local_assets_dir, &asset_files)?;
@@ -57,12 +55,10 @@ fn sync_specific_assets_with_rclone(local_dir: &Path, asset_files: &[&str]) -> R
             .arg("--s3-endpoint")
             .arg("s3.us-west-002.backblazeb2.com")
             .arg("--s3-no-check-bucket")
+            .arg("--s3-decompress")
             .arg("--log-level")
             .arg("ERROR")
-            .arg(format!(
-                ":s3:{}/babblewitz/{}",
-                RCLONE_REMOTE_NAME, file_path
-            ))
+            .arg(format!(":s3:pdx-tools-public/babblewitz/{}", file_path))
             .arg(&local_file)
             .arg("--progress")
             .stdout(Stdio::inherit())
