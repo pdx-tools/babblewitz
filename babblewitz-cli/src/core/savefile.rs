@@ -1,6 +1,5 @@
 use anyhow::{Context, Result};
 use serde::{Deserialize, Serialize};
-use std::io::Read;
 use std::path::{Path, PathBuf};
 use walkdir::WalkDir;
 
@@ -109,36 +108,7 @@ fn detect_game_from_directory(file_path: &Path) -> Option<Game> {
 }
 
 fn read_save_content(file_path: &Path) -> Result<Vec<u8>> {
-    let file = std::fs::File::open(file_path)
-        .with_context(|| format!("Failed to open file: {}", file_path.display()))?;
-    let mut buf = vec![0u8; rawzip::RECOMMENDED_BUFFER_SIZE];
-    let Ok(archive) = rawzip::ZipArchive::from_file(file, &mut buf) else {
-        return Ok(std::fs::read(file_path)?);
-    };
-
-    let mut entries = archive.entries(&mut buf);
-    while let Some(entry) = entries.next_entry()? {
-        if entry.is_dir() {
-            continue;
-        }
-
-        let wayfinder = entry.wayfinder();
-        let entry = archive
-            .get_entry(wayfinder)
-            .with_context(|| format!("Failed to get entry in zip: {}", file_path.display()))?;
-
-        let reader = flate2::read::DeflateDecoder::new_with_buf(entry.reader(), buf);
-        let mut reader = entry.verifying_reader(reader);
-        let mut output = Vec::new();
-        reader
-            .read_to_end(&mut output)
-            .with_context(|| format!("Failed to read entry in zip: {}", file_path.display()))?;
-        return Ok(output);
-    }
-    anyhow::bail!(
-        "No valid entries found in zip file: {}",
-        file_path.display()
-    );
+    Ok(std::fs::read(file_path)?)
 }
 
 #[cfg(test)]
