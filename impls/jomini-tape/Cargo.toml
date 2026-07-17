@@ -6,5 +6,5 @@ edition = "2024"
 [dependencies]
 anyhow = { workspace = true }
 clap = { workspace = true }
-jomini = "0.28"
+jomini = "0.35"
 serde = { workspace = true }
